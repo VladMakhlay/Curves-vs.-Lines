@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <stdlib.h>
+//////#include <string.h>
+////#include <math.h>
+////#include <windows.h>
+//#define GLEW_STATIC
+
+////#include "glew.h"
+////#include <GL/gl.h>
+////#include <GL/glu.h>
+////#include <GL/glut.h>
+
+#include "glfw3.h"
+//#include "glfw3native.h"
+#include "my_gl_lib.h"
+#include "my_algo_lib.h"
+
+
+
+
+
+
+ int main()
+{
+     Object ob;
+
+       int choice = 0;
+
+    do
+     {
+      printf("Please, choose an action : \n\t1 -- line - circle -- intersection\n\t2 -- line - ellipse -- intersection");
+      printf("\n\t3 -- line - hyperbola -- intersection\n\t4 -- line - parabola -- intersection: ");
+       scanf("%i", &choice);
+
+              switch(choice)
+         {
+             case 1 : circle_vs_line(&ob);
+                     break;
+             case 2 : ellipse_vs_line(&ob);
+                     break;
+             case 3 : hyperbola_vs_line(&ob);
+                     break;
+             case 4 : parabola_vs_line(&ob);
+                     break;
+             default: printf("\nThere are four variants of actions to choose, try again!\n\n");
+                     break;
+         }
+       }while(choice < 1 || choice > 4);
+
+
+
+    getchar();
+    return 0;
+}
